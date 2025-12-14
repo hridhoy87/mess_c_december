@@ -1,0 +1,80 @@
+.overlay{
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+}
+
+.center {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+
+  /* ✅ this is the missing piece */
+  z-index: calc(var(--z-modal) + 1);
+}
+
+.content {
+  /* ✅ don’t fight the centering grid */
+  position: relative;
+
+  /* ✅ keep it above overlay */
+  z-index: calc(var(--z-modal) + 2);
+
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  width: min(92vw, 720px);
+}
+
+.sm { width: min(92vw, 520px); }
+.md { width: min(92vw, 720px); }
+.lg { width: min(94vw, 980px); }
+
+.header {
+  position: relative;
+  padding: 18px 18px 12px;
+  background: linear-gradient(to bottom, var(--surface-3), var(--surface-2));
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.description {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.close:hover {
+  border-color: var(--border-2);
+  color: var(--text);
+}
+
+.body { padding: 18px; }
+
+.footer {
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+  background: var(--surface-1);
+}

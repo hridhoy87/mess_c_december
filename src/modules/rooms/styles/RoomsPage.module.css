@@ -1,0 +1,44 @@
+.page {
+  padding: 20px;
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: border-color 140ms ease, background 140ms ease, transform 140ms ease;
+}
+
+.tab:hover {
+  border-color: var(--border-2);
+  background: rgba(255,255,255,0.02);
+  transform: translateY(-1px);
+}
+
+.tabActive {
+  background: var(--surface-3);
+  border-color: rgba(255,255,255,0.16);
+}
+
+.grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}

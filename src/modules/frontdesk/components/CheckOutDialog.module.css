@@ -1,0 +1,50 @@
+.body { display: grid; gap: 12px; }
+
+.row { display: flex; justify-content: space-between; gap: 10px; }
+.k { color: var(--muted); font-size: 12px; }
+.v { color: var(--text); font-size: 13px; }
+
+.warn {
+  border: 1px solid rgba(201,165,91,0.25);
+  background: rgba(201,165,91,0.08);
+  color: var(--gold);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+}
+
+.gold { color: var(--gold); font-weight: 900; }
+.ok { color: rgba(58,141,110,0.95); font-weight: 800; }
+
+.footer { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+
+.right { display: flex; gap: 10px; }
+
+.btnGhost {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btnGold {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(201,165,91,0.35);
+  background: rgba(201,165,91,0.10);
+  color: var(--gold);
+  cursor: pointer;
+}
+
+.btnPrimary {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-2);
+  background: var(--surface-3);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btnPrimary:disabled { opacity: 0.45; cursor: not-allowed; }

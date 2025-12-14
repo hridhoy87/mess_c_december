@@ -1,0 +1,36 @@
+.wrap {
+  border: 1px solid var(--border);
+  background: var(--surface-1);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+
+.headerRow, .row {
+  display: grid;
+  grid-template-columns: 160px 160px 1fr 140px;
+  gap: 10px;
+  padding: 10px 12px;
+}
+
+.headerRow {
+  background: var(--surface-3);
+  color: var(--muted);
+  font-size: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.row {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.row:last-child { border-bottom: none; }
+
+.time { color: var(--subtle); font-size: 12px; }
+.kind { color: var(--muted); }
+.desc { color: var(--text); }
+.amount { text-align: right; font-variant-numeric: tabular-nums; }
+
+.paymentRow { background: rgba(58,141,110,0.05); }
+.paymentAmt { color: rgba(58,141,110,0.95); }

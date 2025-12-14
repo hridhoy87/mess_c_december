@@ -1,0 +1,117 @@
+.overlay{
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-drawer);
+}
+
+.wrap{
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-drawer);
+}
+
+.drawer {
+  width: min(88vw, 360px);
+  height: 100%;
+  z-index: calc(var(--z-drawer) + 1);
+  background: linear-gradient(to bottom, var(--surface-3), var(--surface-2));
+  border-right: 1px solid rgba(255,255,255,0.10);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 14px;
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.title {
+  font-weight: 900;
+  letter-spacing: 0.3px;
+}
+.sub {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* NEW: wrapper for scrollable content */
+.body{
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 6px;           /* keeps content away from scrollbar */
+  scrollbar-gutter: stable;     /* avoids layout shift */
+}
+
+/* Optional: subtle scrollbar (Chromium/Edge) */
+.body::-webkit-scrollbar { width: 10px; }
+.body::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.12);
+  border-radius: 999px;
+}
+.body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+.close {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.close:hover { border-color: var(--border-2); color: var(--text); }
+
+.section {
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.sectionTitle {
+  color: var(--subtle);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.action {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(201,165,91,0.25);
+  background: rgba(201,165,91,0.08);
+  color: var(--gold);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.action:last-child { margin-bottom: 0; }
+.action:hover { filter: brightness(1.06); }
+
+.link {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  color: var(--text);
+}
+.link:hover {
+  border-color: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+}
+
+.footer {
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  border-radius: 14px;
+}
+
+.userLine { font-weight: 900; }
+.userRole { color: var(--muted); font-size: 12px; margin-top: 2px; }

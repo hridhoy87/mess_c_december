@@ -1,0 +1,132 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 820px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.panel {
+  border: 1px solid var(--border);
+  background: var(--surface-1);
+  border-radius: var(--r-md);
+  padding: 14px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.kv {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.k {
+  color: var(--subtle);
+  margin-right: 8px;
+}
+
+.subTitle {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.empty {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.em { color: var(--text); }
+
+.moneyRow {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.moneyBox {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px;
+  background: rgba(255,255,255,0.02);
+}
+
+.moneyLabel {
+  color: var(--subtle);
+  font-size: 12px;
+}
+
+.moneyValue {
+  margin-top: 6px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.moneyValueMuted {
+  margin-top: 6px;
+  color: rgba(58,141,110,0.9);
+  font-weight: 700;
+}
+
+.moneyValueGold {
+  margin-top: 6px;
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footerRight {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btnGhost {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btnGhost:hover { border-color: var(--border-2); }
+
+.btnPrimary {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-2);
+  background: var(--surface-3);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btnPrimary:hover { filter: brightness(1.05); }
+
+.btnGold {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(201,165,91,0.35);
+  background: rgba(201,165,91,0.10);
+  color: var(--gold);
+  cursor: pointer;
+}
+
+.btnGold:hover { filter: brightness(1.06); }

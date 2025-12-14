@@ -1,0 +1,17 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--muted);
+}
+
+.neutral { }
+.gold { border-color: rgba(201,165,91,0.35); color: var(--gold); background: rgba(201,165,91,0.08); }
+.emerald { border-color: rgba(58,141,110,0.35); color: var(--emerald); background: rgba(58,141,110,0.08); }
+.royal { border-color: rgba(61,111,182,0.35); color: var(--royal); background: rgba(61,111,182,0.08); }
+.burgundy { border-color: rgba(122,47,58,0.35); color: var(--burgundy); background: rgba(122,47,58,0.08); }

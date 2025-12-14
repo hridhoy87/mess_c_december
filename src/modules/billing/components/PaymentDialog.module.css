@@ -1,0 +1,37 @@
+.body { display: grid; gap: 10px; }
+
+.label { color: var(--muted); font-size: 12px; }
+
+.input, .select {
+  width: 100%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.input:focus, .select:focus { border-color: var(--border-2); }
+
+.hint { color: var(--subtle); font-size: 12px; }
+
+.footer { display: flex; justify-content: flex-end; gap: 10px; }
+
+.btnGhost {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btnPrimary {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-2);
+  background: var(--surface-3);
+  color: var(--text);
+  cursor: pointer;
+}

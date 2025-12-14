@@ -1,0 +1,45 @@
+.panel {
+  border: 1px solid var(--border);
+  background: var(--surface-1);
+  border-radius: var(--r-md);
+  padding: 12px;
+}
+
+.title {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  margin-bottom: 10px;
+}
+
+.label {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.input, .select {
+  width: 100%;
+  margin-top: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.input:focus, .select:focus { border-color: var(--border-2); }
+
+.btn {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(201,165,91,0.35);
+  background: rgba(201,165,91,0.10);
+  color: var(--gold);
+  cursor: pointer;
+}
+
+.btn:hover { filter: brightness(1.06); }
