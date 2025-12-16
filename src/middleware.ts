@@ -1,38 +1,47 @@
-// src/middleware.ts
-import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { SESSION_COOKIE, verifySession } from "./lib/auth";
+import { NextResponse } from "next/server";
 
-export async function middleware(req: NextRequest) {
+const PUBLIC_PATHS = new Set([
+  "/login",
+  "/forgot-password",
+  "/reset-password",
+]);
+
+export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  // Allow auth pages and public assets
+  // Allow Next internals + static + API routes
   if (
-    pathname.startsWith("/login") ||
-    pathname.startsWith("/forgot-password") ||
-    pathname.startsWith("/reset-password") ||
-    pathname.startsWith("/api") ||
     pathname.startsWith("/_next") ||
-    pathname === "/" ||
-    pathname === "/favicon.ico"
+    pathname.startsWith("/api") ||
+    pathname === "/favicon.ico" ||
+    pathname.endsWith(".png") ||
+    pathname.endsWith(".jpg") ||
+    pathname.endsWith(".jpeg") ||
+    pathname.endsWith(".svg") ||
+    pathname.endsWith(".webp")
   ) {
     return NextResponse.next();
   }
 
-  const token = req.cookies.get(SESSION_COOKIE)?.value;
-
-  if (!token) {
-    return NextResponse.redirect(new URL("/login", req.url));
-  }
-
-  try {
-    await verifySession(token);
+  // Allow public auth pages
+  if (PUBLIC_PATHS.has(pathname)) {
     return NextResponse.next();
-  } catch {
-    return NextResponse.redirect(new URL("/login", req.url));
   }
+
+  // Protect everything else
+  const token = req.cookies.get("messc_session")?.value;
+  if (!token) {
+    const url = req.nextUrl.clone();
+    url.pathname = "/login";
+    url.searchParams.set("next", pathname);
+    return NextResponse.redirect(url);
+  }
+
+  return NextResponse.next();
 }
 
+// Match all pages except static assets
 export const config = {
-  matcher: ["/((?!_next/static|_next/image).*)"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
 };
