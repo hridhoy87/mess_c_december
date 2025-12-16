@@ -115,3 +115,31 @@
 
 .userLine { font-weight: 900; }
 .userRole { color: var(--muted); font-size: 12px; margin-top: 2px; }
+
+.footerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.logout {
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+.logout:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

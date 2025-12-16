@@ -5,6 +5,7 @@ import * as RadixDialog from "@radix-ui/react-dialog";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { useRouter } from "next/navigation";
 import styles from "./SideDrawer.module.css";
 
 export function SideDrawer({
@@ -14,6 +15,23 @@ export function SideDrawer({
   open: boolean;
   onOpenChange: (o: boolean) => void;
 }) {
+  const router = useRouter();
+  const [loggingOut, setLoggingOut] = React.useState(false);
+
+  async function handleLogout() {
+    if (loggingOut) return;
+    setLoggingOut(true);
+
+    try {
+      await fetch("/api/auth/logout", { method: "POST" });
+    } finally {
+      onOpenChange(false);
+      router.replace("/login");
+      router.refresh();
+      setLoggingOut(false);
+    }
+  }
+
   return (
     <RadixDialog.Root open={open} onOpenChange={onOpenChange}>
       <AnimatePresence>
@@ -39,7 +57,6 @@ export function SideDrawer({
                   exit={{ x: -24, opacity: 0 }}
                   transition={{ duration: 0.16, ease: "easeOut" }}
                 >
-                  {/* Accessibility (Radix requirement) */}
                   <VisuallyHidden>
                     <RadixDialog.Title>Application menu</RadixDialog.Title>
                     <RadixDialog.Description>
@@ -47,7 +64,6 @@ export function SideDrawer({
                     </RadixDialog.Description>
                   </VisuallyHidden>
 
-                  {/* Header (fixed area) */}
                   <div className={styles.head}>
                     <div>
                       <div className={styles.title}>STA OFFRS’ MESS C</div>
@@ -62,7 +78,7 @@ export function SideDrawer({
                     </RadixDialog.Close>
                   </div>
 
-                  {/* ✅ Scrollable body */}
+                  {/* Scrollable body */}
                   <div className={styles.body}>
                     <div className={styles.section}>
                       <div className={styles.sectionTitle}>Actions</div>
@@ -124,8 +140,21 @@ export function SideDrawer({
 
                   {/* Footer (always visible) */}
                   <div className={styles.footer}>
-                    <div className={styles.userLine}>SGT XYZ</div>
-                    <div className={styles.userRole}>FRONT DESK NCO</div>
+                    <div className={styles.footerTop}>
+                      <div>
+                        <div className={styles.userLine}>SGT XYZ</div>
+                        <div className={styles.userRole}>FRONT DESK NCO</div>
+                      </div>
+
+                      <button
+                        type="button"
+                        className={styles.logout}
+                        onClick={handleLogout}
+                        disabled={loggingOut}
+                      >
+                        {loggingOut ? "Logging out…" : "Logout"}
+                      </button>
+                    </div>
                   </div>
                 </motion.aside>
               </div>

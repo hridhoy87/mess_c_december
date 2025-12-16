@@ -1,0 +1,98 @@
+.page {
+  min-height: calc(100vh - 80px);
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.card {
+  width: min(520px, 92vw);
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.35);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: 6px;
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.form {
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+}
+
+.input {
+  height: 40px;
+  border-radius: 12px;
+  padding: 0 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.92);
+  outline: none;
+}
+
+.input:focus {
+  border-color: #004991ff;
+}
+
+.primaryBtn {
+  margin-top: 6px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: #004991ff;
+  color: white;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.primaryBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.linkBtn {
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: transparent;
+  color: rgba(255,255,255,0.88);
+  cursor: pointer;
+}
+
+.error {
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255,80,80,0.35);
+  background: rgba(255,80,80,0.14);
+  font-size: 13px;
+}
+
+.info {
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  font-size: 13px;
+}
+
+.hint {
+  margin-top: 12px;
+  font-size: 12px;
+  opacity: 0.8;
+}

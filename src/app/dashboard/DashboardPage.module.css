@@ -1,0 +1,199 @@
+.page {
+  padding: 18px 18px 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.headerRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: 0.2px;
+}
+
+.subtitle {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* Top cards */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 980px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  border-radius: 18px;
+  min-height: 110px;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(10, 65, 90, 0.60); /* matches your blue blocks */
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.cardTitle {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  font-weight: 650;
+  opacity: 0.85;
+}
+
+.cardValue {
+  margin-top: 10px;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.cardMeta {
+  margin-top: 6px;
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* Lower area */
+.lowerGrid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+@media (max-width: 980px) {
+  .lowerGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+}
+
+.panelTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.panelTitle {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.panelMeta {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* Table */
+.tableWrap {
+  padding: 10px 12px 14px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.table thead th {
+  text-align: left;
+  padding: 10px 10px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+  background: rgba(10, 65, 90, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.table tbody td {
+  padding: 10px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 13px;
+}
+
+.table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.table tfoot td {
+  padding: 10px 10px;
+  font-weight: 750;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.building {
+  font-weight: 650;
+}
+
+.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.footerLabel {
+  opacity: 0.85;
+}
+
+/* Chart */
+.chartWrap {
+  padding: 10px 12px 14px;
+}
+
+.chartInner {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.25);
+  padding: 10px 10px 6px;
+}
+
+/* Toggle buttons */
+.toggleGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.toggleBtn {
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.toggleBtn[data-active="1"] {
+  background: rgba(10, 65, 90, 0.95);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.toggleBtn:active {
+  transform: translateY(1px);
+}
