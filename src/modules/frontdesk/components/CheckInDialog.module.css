@@ -1,4 +1,22 @@
-.body { display: grid; gap: 10px; }
+.verticalBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.body {
+  /* Force a bounded area so overflow can scroll */
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+
+  /* Prevent scroll chaining to the page behind */
+  overscroll-behavior: contain;
+
+  /* Optional: keep scrollbar from overlapping inputs */
+  padding-right: 8px;
+
+}
+
 
 .label { color: var(--muted); font-size: 12px; }
 

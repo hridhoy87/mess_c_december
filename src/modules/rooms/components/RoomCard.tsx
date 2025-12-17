@@ -15,7 +15,15 @@ function statusTone(status: Room["status"]) {
   }
 }
 
-export function RoomCard({ room, onClick }: { room: Room; onClick: (room: Room) => void }) {
+export function RoomCard({ 
+  room, 
+  onClick,
+  nextBookingText 
+}: { 
+  room: Room; 
+  onClick: (room: Room) => void;
+  nextBookingText: string;
+}) {
   const acClass = room.ac === "AC" ? styles.ac : styles.nonAc;
 
   return (
@@ -38,7 +46,7 @@ export function RoomCard({ room, onClick }: { room: Room; onClick: (room: Room) 
           {room.condition}
         </Badge>
         <div className={styles.next}>
-          {room.nextBooking ? `Next: ${new Date(room.nextBooking).toLocaleString()}` : "No upcoming booking"}
+          {nextBookingText}
         </div>
       </div>
     </button>

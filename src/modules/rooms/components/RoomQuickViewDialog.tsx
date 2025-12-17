@@ -69,7 +69,7 @@ export function RoomQuickViewDialog({
       </div>
     </div>
   ) : null;
-
+  
   return (
     <Dialog
       open={open}
@@ -98,7 +98,9 @@ export function RoomQuickViewDialog({
               <div><span className={styles.k}>TV</span> {room.hasTV ? "Yes" : "No"}</div>
               <div>
                 <span className={styles.k}>Next Booking</span>{" "}
-                {room.nextBooking ? new Date(room.nextBooking).toLocaleString() : "None"}
+                {room.next_booking || room.nextBooking 
+                  ? new Date((room.next_booking || room.nextBooking) as string).toLocaleString() 
+                  : "None"}
               </div>
             </div>
           </div>
